@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteForceVN — Gaming Services & Optimization</title>
+    <meta name="description" content="EliteForceVN — Dịch vụ tối ưu máy tính, Regedit kéo tâm, Cheat FreeFire, Setup Discord, Dev Bot chuyên nghiệp.">
+    <meta name="theme-color" content="#0a0a0f">
+    <!-- Open Graph / Discord Embed Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EliteForceVN — Gaming Services & Optimization">
+    <meta property="og:description" content="Tối ưu máy tính, Regedit kéo tâm, Cheat FreeFire, Setup Discord & Dev Bot chuyên nghiệp.">
+    <meta property="og:image" content="assets/logo.png">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== BRAND NEW "CYBER NEON WARP PORTAL" LOADING SCREEN ===== -->
+    <div id="loader" class="warp-loader">
+        <!-- Ambient Deep Space Cosmic Nebula -->
+        <div class="warp-nebula-glow"></div>
+
+        <!-- Concentric Cyber Octagon Warp Waves pulsing outward -->
+        <div class="warp-rings-field">
+            <div class="warp-wave wave-1"></div>
+            <div class="warp-wave wave-2"></div>
+            <div class="warp-wave wave-3"></div>
+            <div class="warp-wave wave-4"></div>
+        </div>
+
+        <!-- Center Quantum Stage -->
+        <div class="warp-center-stage">
+            <!-- Glowing Laser Forge Ring -->
+            <div class="laser-forge-ring">
+                <span class="laser-spark spark-n"></span>
+                <span class="laser-spark spark-s"></span>
+                <span class="laser-spark spark-e"></span>
+                <span class="laser-spark spark-w"></span>
+            </div>
+
+            <!-- Optical Blade Light Sweep across Logo -->
+            <div class="optical-light-sweep"></div>
+
+            <!-- 3D Logo Floating & Breathing -->
+            <div class="warp-logo-wrap">
+                <img src="assets/logo.png" alt="EliteForceVN" class="warp-logo-img">
+                <div class="warp-logo-shadow"></div>
+            </div>
+
+            <!-- Sleek Modern Telemetry Bar & Audio Spectrum -->
+            <div class="warp-hud-panel">
+                <div class="warp-tagline">
+                    <span class="hud-blink-dot"></span>
+                    <span class="hud-title">ELITEFORCEVN MATRIX</span>
+                    <span class="hud-code">// v2.6 ACTIVE</span>
+                </div>
+
+                <!-- Digital Neon Counter -->
+                <div class="warp-counter-box">
+                    <span class="warp-digits" id="loader-percent">0</span>
+                    <span class="warp-unit">%</span>
+                </div>
+
+                <!-- High-Speed Segmented Energy Bar -->
+                <div class="warp-progress-track">
+                    <div class="warp-progress-fill" id="loader-bar-fill">
+                        <div class="warp-progress-lead"></div>
+                    </div>
+                </div>
+
+                <!-- Live Status Stream -->
+                <div class="warp-status-text" id="loader-status">INITIALIZING QUANTUM PROTOCOL...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CUSTOM ROTATING GAMING CURSOR ===== -->
+    <div id="custom-cursor">
+        <div class="cursor-crosshair">
+            <span class="cursor-corner c-tl"></span>
+            <span class="cursor-corner c-tr"></span>
+            <span class="cursor-corner c-bl"></span>
+            <span class="cursor-corner c-br"></span>
+            <span class="cursor-center-dot"></span>
+        </div>
+    </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div id="cursor-glow"></div>
+
+    <!-- ===== BACKGROUND PARTICLES & SPOTLIGHTS ===== -->
+    <div class="ambient-spotlights">
+        <div class="spotlight spotlight-1"></div>
+        <div class="spotlight spotlight-2"></div>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== SIDEBAR FLOATING TOGGLE ===== -->
+    <div class="side-floating-widget" title="Chế độ hiển thị">
+        <button class="side-btn" id="theme-toggle-side">
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <!-- ===== NAVBAR (TASO CAPSULE STYLE) ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#home" class="nav-brand">
+                <img src="assets/logo.png" alt="EliteForceVN Logo" class="nav-brand-logo">
+                <div class="nav-brand-text">
+                    <span class="brand-title">ELITEFORCEVN</span>
+                </div>
+            </a>
+
+            <!-- Capsule Center Menu -->
+            <div class="nav-capsule-wrapper">
+                <ul class="nav-capsule" id="nav-menu">
+                    <li><a href="#home" class="capsule-link active" data-i18n="nav_home">Trang Chủ</a></li>
+                    <li><a href="#products" class="capsule-link" data-i18n="nav_techniques">Dịch Vụ</a></li>
+                    <li><a href="#pricing" class="capsule-link" data-i18n="nav_pricing">Bảng Giá</a></li>
+                    <li><a href="#projects" class="capsule-link" data-i18n="nav_projects">Dự Án</a></li>
+                    <li><a href="#info" class="capsule-link" data-i18n="nav_info">Info</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Actions: Language Switcher & Discord -->
+            <div class="nav-actions">
+                <!-- Toggle switch chuyển đổi Tiếng Việt sang Tiếng Anh (Ảnh 2) -->
+                <div class="lang-switch-toggle" id="lang-switch" title="Chuyển Tiếng Việt / English" role="button" tabindex="0">
+                    <span class="lang-tag vi-tag active">VI</span>
+                    <div class="lang-switch-knob">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span class="lang-tag en-tag">EN</span>
+                </div>
+
+                <a href="https://discord.gg/fsdqzcp5T" target="_blank" class="taso-discord-btn">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION (TASO 2-COLUMN SPLIT) ===== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <!-- Left Column: Welcome text & CTA -->
+            <div class="hero-left">
+                <div class="welcome-heading">
+                    <h1 class="welcome-line-1" data-i18n="hero_welcome">WELCOME</h1>
+                    <h2 class="welcome-line-2">
+                        <span data-i18n="hero_to">TO</span> <span class="animated-brand-text" id="typewriter-text">ELITEFORCEVN</span><span class="typing-cursor">|</span>
+                    </h2>
+                </div>
+                <p class="hero-description" data-i18n="hero_desc">
+                    Chào mừng bạn đến với EliteForceVN — Nơi cung cấp các giải pháp công nghệ & dịch vụ gaming chuyên sâu. Chúng tôi hỗ trợ tối ưu máy tính, regedit aimlock, cheat FreeFire, thiết lập server Discord, khung hồ sơ và phát triển bot riêng theo yêu cầu với độ ổn định cao.
+                </p>
+                <div class="hero-cta-wrapper">
+                    <a href="https://discord.gg/fsdqzcp5T" target="_blank" class="taso-hero-discord-btn">
+                        <i class="fab fa-discord"></i>
+                        <span data-i18n="btn_join_discord">Tham gia Discord</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Emblem Logo Showcase -->
+            <div class="hero-right">
+                <div class="emblem-stage">
+                    <div class="emblem-halo"></div>
+                    <img src="assets/logo.png" alt="EliteForceVN 3D Logo" class="hero-emblem-img animate-hero-emblem">
+                    <div class="emblem-reflection"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION HEADING: TECHNIQUES (DỊCH VỤ) ===== -->
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <div class="taso-section-header">
+                <h2 class="taso-section-title" data-i18n="sec_techniques">Techniques</h2>
+                <div class="taso-title-underline"></div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs" id="category-tabs">
+                <button class="tab-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    <span data-i18n="tab_all">Tất Cả</span>
+                </button>
+                <button class="tab-btn" data-category="optimize">
+                    <i class="fas fa-microchip"></i>
+                    <span data-i18n="tab_opt">Tối Ưu PC</span>
+                </button>
+                <button class="tab-btn" data-category="regedit">
+                    <i class="fas fa-crosshairs"></i>
+                    <span data-i18n="tab_reg">Regedit</span>
+                </button>
+                <button class="tab-btn" data-category="cheat">
+                    <i class="fas fa-gamepad"></i>
+                    <span data-i18n="tab_cheat">Cheat FF</span>
+                </button>
+                <button class="tab-btn" data-category="discord-setup">
+                    <i class="fab fa-discord"></i>
+                    <span data-i18n="tab_dc">Setup Discord</span>
+                </button>
+                <button class="tab-btn" data-category="profile">
+                    <i class="fas fa-id-badge"></i>
+                    <span data-i18n="tab_profile">Khung Hồ Sơ</span>
+                </button>
+                <button class="tab-btn" data-category="bot">
+                    <i class="fas fa-robot"></i>
+                    <span data-i18n="tab_bot">Dev Bot</span>
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="product-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING SECTION (BẢNG GIÁ DỊCH VỤ DƯỚI PHẦN DỊCH VỤ) ===== -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-container">
+            <div class="taso-section-header">
+                <div class="pricing-badge-pill">
+                    <i class="fas fa-tags"></i>
+                    <span data-i18n="badge_pricing">BẢNG GIÁ NIÊM YẾT</span>
+                </div>
+                <h2 class="taso-section-title" data-i18n="sec_pricing">Bảng Giá Dịch Vụ</h2>
+                <div class="taso-title-underline"></div>
+                <p class="section-subtitle" data-i18n="sec_pricing_desc">Bảng giá công khai & minh bạch — Cung cấp dịch vụ uy tín với mức giá tối ưu nhất cho anh em game thủ</p>
+            </div>
+
+            <!-- Pricing Grid (Injected via JS with 3D Tilt & Corner Brackets) -->
+            <div class="pricing-grid" id="pricing-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Price Guarantee / Order Note -->
+            <div class="pricing-footer-banner">
+                <div class="banner-icon"><i class="fab fa-discord"></i></div>
+                <div class="banner-text">
+                    <h4 data-i18n="price_banner_title">Cần Báo Giá Theo Yêu Cầu Riêng?</h4>
+                    <p data-i18n="price_banner_desc">Tham gia Discord EliteForceVN để được kỹ thuật viên hỗ trợ kiểm tra máy, test cấu hình và tư vấn gói tối ưu nhất.</p>
+                </div>
+                <a href="https://discord.gg/fsdqzcp5T" target="_blank" class="banner-btn">
+                    <i class="fab fa-discord"></i>
+                    <span data-i18n="btn_join_discord">Tham gia Discord</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT / PROJECTS SECTION ===== -->
+    <section class="about-section" id="projects">
+        <div class="section-container">
+            <div class="taso-section-header">
+                <h2 class="taso-section-title" data-i18n="sec_projects">Projects & Cam Kết</h2>
+                <div class="taso-title-underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3 class="about-brand-heading" data-i18n="proj_title">EliteForceVN</h3>
+                    <p class="about-text" data-i18n="proj_desc">
+                        Chúng tôi chuyên nghiên cứu và cung cấp các giải pháp tối ưu hệ thống gaming bài bản và đáng tin cậy. Toàn bộ dịch vụ được cấu hình riêng theo thông số phần cứng và yêu cầu cụ thể của từng khách hàng.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h4 data-i18n="feat_1_title">An Toàn 100%</h4>
+                                <p data-i18n="feat_1_desc">Bảo mật dữ liệu, anti-ban cập nhật liên tục</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h4 data-i18n="feat_2_title">Tốc Độ & Ổn Định</h4>
+                                <p data-i18n="feat_2_desc">Cải thiện FPS và độ nhạy tức thì</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                            <div>
+                                <h4 data-i18n="feat_3_title">Support 24/7</h4>
+                                <p data-i18n="feat_3_desc">Kỹ thuật viên hỗ trợ trực tiếp qua Discord</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-code"></i></div>
+                            <div>
+                                <h4 data-i18n="feat_4_title">Custom Code</h4>
+                                <p data-i18n="feat_4_desc">Dev bot và hệ thống Discord theo yêu cầu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-showcase-box">
+                        <img src="assets/logo.png" alt="EliteForceVN Center" class="showcase-logo-spin">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFO SECTION (PHẦN INFO CỦA TASO STUDIO - ẢNH 3) ===== -->
+    <section class="info-section" id="info">
+        <div class="section-container">
+            <div class="taso-section-header">
+                <h2 class="taso-section-title" data-i18n="sec_info">Info Team</h2>
+                <div class="taso-title-underline"></div>
+            </div>
+
+            <!-- Team Members Grid (Đúng kiểu Ảnh 3 của TASO) -->
+            <div class="team-grid" id="team-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TASO FOOTER PILL ===== -->
+    <footer class="taso-footer">
+        <div class="taso-footer-pill">
+            <span class="copyright-text">&copy; 2026 <strong>ELITEFORCEVN</strong></span>
+            <span class="footer-dot">•</span>
+            <a href="https://discord.gg/fsdqzcp5T" target="_blank" class="footer-link" data-i18n="footer_powered">Powered by Discord Community</a>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING BACK TO TOP BUTTON (ẢNH 3 GÓC PHẢI DƯỚI) ===== -->
+    <button class="back-to-top-btn" id="back-to-top" title="Lên đầu trang" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== PRODUCT SHOWCASE MODAL (LUXURY 2-COLUMN CYBER DIALOG) ===== -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-container-v2">
+            <!-- Modal Close Button -->
+            <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- 2-Column Body -->
+            <div class="modal-grid-layout">
+                <!-- Left Column: 3D Stage & 360 Rotating Hologram -->
+                <div class="modal-stage-col">
+                    <div class="modal-stage-box">
+                        <!-- Corner L-brackets on 3D stage -->
+                        <div class="card-corner corner-tl"></div>
+                        <div class="card-corner corner-tr"></div>
+                        <div class="card-corner corner-bl"></div>
+                        <div class="card-corner corner-br"></div>
+
+                        <!-- Stage Ambient Glow -->
+                        <div class="modal-stage-glow" id="modal-stage-glow"></div>
+
+                        <!-- 360 Rotating Visual -->
+                        <div class="modal-visual-wrap" id="modal-visual">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <!-- Stage Control Pill -->
+                        <div class="modal-stage-control">
+                            <span class="badge-360-live"><i class="fas fa-cube"></i> 360° VIEW</span>
+                            <button class="stage-spin-toggle" id="modal-spin-toggle" title="Bật/Tắt xoay 360">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Product Intelligence & Specs -->
+                <div class="modal-info-col">
+                    <div class="modal-top-tags">
+                        <span class="modal-category-tag" id="modal-cat-tag">WINDOWS & HARDWARE</span>
+                        <div class="modal-badge-slot" id="modal-badges"></div>
+                    </div>
+
+                    <h2 class="modal-product-title" id="modal-title">Product Name</h2>
+                    <p class="modal-product-description" id="modal-desc">Detailed product description...</p>
+
+                    <!-- Features Checklist -->
+                    <div class="modal-features-card">
+                        <div class="features-card-heading">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-i18n="modal_features_title" id="modal-features-title">QUYỀN LỢI & CAM KẾT DỊCH VỤ</span>
+                        </div>
+                        <ul class="modal-feature-points" id="modal-features-list">
+                            <li><i class="fas fa-check-circle"></i> <span>Hỗ trợ cài đặt & tinh chỉnh trực tiếp qua Ultraview</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Bảo hành chu đáo, hướng dẫn chi tiết trọn đời</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>An toàn 100%, bảo mật thông tin & thiết bị</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span>Kỹ thuật viên hỗ trợ 24/7 trực tiếp trên Discord</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Meta specs chips -->
+                    <div class="modal-meta-chips">
+                        <div class="meta-chip">
+                            <span class="chip-label" data-i18n="modal_team_lbl">Đội ngũ:</span>
+                            <span class="chip-value" id="modal-creator">EliteForceVN</span>
+                        </div>
+                        <div class="meta-chip">
+                            <span class="chip-label" data-i18n="modal_cat_lbl">Phân khúc:</span>
+                            <span class="chip-value" id="modal-category">Chính Hãng</span>
+                        </div>
+                    </div>
+
+                    <!-- Price & Discord CTA -->
+                    <div class="modal-bottom-action">
+                        <div class="modal-price-cluster">
+                            <span class="modal-price-label" data-i18n="modal_price_lbl">MỨC GIÁ:</span>
+                            <div class="modal-price-digits" id="modal-price">200k - 250k</div>
+                        </div>
+
+                        <a href="https://discord.gg/fsdqzcp5T" target="_blank" class="modal-discord-cta-btn">
+                            <i class="fab fa-discord"></i>
+                            <span data-i18n="modal_contact_btn">Liên Hệ Ngay</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
